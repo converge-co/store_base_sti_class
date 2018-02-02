@@ -17,7 +17,7 @@ if ActiveRecord::VERSION::STRING =~ /^5\.0/
           if value.base_class
             queries[table.association_foreign_type.to_s] = ActiveRecord::Base.store_base_sti_class ? value.base_class.name : value.value.class.name
           end
-
+          
           queries[table.association_foreign_key.to_s] = value.ids
           predicate_builder.build_from_hash(queries)
         end
